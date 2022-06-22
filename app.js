@@ -76,14 +76,65 @@ enableDarkMode();
 }
 
 // add event listener to the dark mode button toggle
-darkModeToggle.addEventListener('click', () => {
-// on click, check localstorage for the dark mode value
-darkMode = localStorage.getItem("darkMode");
-if (darkMode !== "enabled") {
-  // if dark mode is not enabled, run this function to set it to enabled
-  enableDarkMode();
-} else {
-  // if dark mode is enabled, run this function to set it to disabled
-  disableDarkMode();
+// darkModeToggle.addEventListener('click', () => {
+// // on click, check localstorage for the dark mode value
+// darkMode = localStorage.getItem("darkMode");
+// if (darkMode !== "enabled") {
+//   // if dark mode is not enabled, run this function to set it to enabled
+//   enableDarkMode();
+// } else {
+//   // if dark mode is enabled, run this function to set it to disabled
+//   disableDarkMode();
+// }
+// })
+
+// ------------------------------------------------- CUSTOM -----------------------------
+
+let projectButtons = Array.from(document.querySelectorAll(".projects-button"));
+let projectImages = Array.from(document.querySelectorAll(".mobile-project-image"));
+let desktopProjectImage = document.querySelector(".desktop-project-image");
+
+let currIndex = 0;
+
+let screenWidth = window.innerWidth;
+
+const updateScreenWidth = () => {
+  let prevWidth = screenWidth
+  screenWidth = window.innerWidth
+  if (screenWidth > 1080 && prevWidth < 1080) {
+    desktopProjectImage.src = projectImages[currIndex].src;
+    projectImages[currIndex].classList.toggle("project-image-active");
+    if (currIndex !== 0) projectImages[0].classList.remove('project-image-active')
+  }
+
+  if (screenWidth < 1080 && prevWidth > 1080) {
+    desktopProjectImage.classList.toggle("project-image-active");
+    projectImages[currIndex].classList.toggle("project-image-active");
+    console.log('test')
+  }
 }
+
+window.addEventListener('resize', updateScreenWidth);
+
+projectButtons.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    if (screenWidth < 1024) {
+      projectButtons[currIndex].classList.toggle("project-button-active");
+      projectImages[currIndex].classList.toggle("project-image-active");
+      projectButtons[index].classList.toggle("project-button-active");
+      projectImages[index].classList.toggle("project-image-active");
+
+      currIndex = index;
+    } else {
+      desktopProjectImage.style.opacity = 0
+      setTimeout(() => {
+        desktopProjectImage.style.opacity = 1
+        desktopProjectImage.src = projectImages[index].src;
+      }, 200)
+      projectButtons[currIndex].classList.toggle("project-button-active");
+      projectButtons[index].classList.toggle("project-button-active");
+      currIndex = index;
+    }
+  }
+  )
 })

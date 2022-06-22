@@ -2,35 +2,56 @@
 <---         CORE STYLES        -->
 <--- -------------------------- -*/
 
-/* roboto-regular - latin */
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'Quiet Sans';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
 	src: local(''),
-			url('/fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-			url('/fonts/roboto-v29-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url('../fonts/QuietSansItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/QuietSansItalic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+/* roboto-regular - latin */
+@font-face {
+	font-family: 'Quiet Sans';
+	font-style: normal;
+	font-weight: 300;
+	font-display: swap;
+	src: local(''),
+			url('../fonts/QuietSansLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/QuietSansLight.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /* roboto-700 - latin */
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'Quiet Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local(''),
+			url('../fonts/QuietSansRegular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/QuietSansRegular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-900 - latin */
+@font-face {
+	font-family: 'Quiet Sans';
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
 	src: local(''),
-			url('/fonts/roboto-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-			url('/fonts/roboto-v29-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url('../fonts/QuietSansSemiBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/QuietSansSemiBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* roboto-900 - latin */
+
 @font-face {
-	font-family: 'Roboto';
+	font-family: 'Quiet Sans';
 	font-style: normal;
 	font-weight: 900;
 	font-display: swap;
 	src: local(''),
-			url('/fonts/roboto-v29-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-			url('/fonts/roboto-v29-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			url('../fonts/QuietSansBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('../fonts/QuietSansBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 @media screen and (min-width: 0px) {
@@ -78,13 +99,15 @@
 		--darkPrimary: #13726d;
 		--tint: #0e524e;
 		--shade: #49b5b0;
+		--btn: #282828;
+		--btnHoverProjects: #f4f5f7;
 	}
 	
 	body, html {
 		margin: 0;
 		padding: 0;
 		overflow-x: hidden !important;
-		font-family: "Roboto", sans-serif;
+		font-family: "Queit Sans", sans-serif;
 	}
 	
 	a:hover {
@@ -115,7 +138,7 @@
 	}
 	
 	.container {
-		padding: 0 10/20em;
+		padding: 0 35/20em;
 		margin: auto;
 	}
 	
@@ -130,6 +153,7 @@
 	
 	button {
 		text-transform: uppercase;
+		font-family: "Quiet Sans", sans-serif;
 	}
 
     .button-solid {
@@ -138,12 +162,13 @@
         margin: auto;
         text-align: center;
         text-decoration: none;
-        background: var(--primary);
-        line-height: 53/20;
-        width: 162/18em;
+        background: var(--btn);
+        line-height: 61/18em;
+        width: 210/18em;
+		height: 61/18em;
         border-radius: 3/18em;
         font-size: 18/20em;
-        font-family: "Roboto", sans-serif;
+        font-family: "Quiet Sans", sans-serif;
         -webkit-transition: .2s ease;
         -o-transition: .2s ease;
         transition: .2s ease;
@@ -158,7 +183,7 @@
             display: block;
             height: 100%;
             width: 0%;
-            background: #10625e;
+            background: hsl(0, 0%, 10%);
             opacity: 1;
             top: 0;
             left: 0;
@@ -474,7 +499,7 @@
                     transition-delay: .2s;
             opacity: 0;
             visibility: hidden;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Quiet Sans', sans-serif;
         }
 	}
 	
@@ -488,7 +513,7 @@
 @media screen and (min-width: 450px) and (max-width: 991px) {
 
     .container {
-        max-width: 900/20em;
+        max-width: 1000/20em;
     }
 
     .mobile-nav {
@@ -544,7 +569,7 @@
 	}
 
 	.container {
-		max-width: 1100/20em;
+		max-width: 1330/20em;
 	}
 
 	/*navbar */
@@ -618,7 +643,7 @@
             position: fixed;
             z-index: 1000;
             left: 0;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
 	}
 

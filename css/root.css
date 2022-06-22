@@ -1,33 +1,51 @@
 /*-- -------------------------- -->
 <---         CORE STYLES        -->
 <--- -------------------------- -*/
-/* roboto-regular - latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Quiet Sans';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''), url('/fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/roboto-v29-latin-regular.woff') format('woff');
+  src: local(''), url('../fonts/QuietSansItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/QuietSansItalic.woff') format('woff');
+  
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Quiet Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local(''), url('../fonts/QuietSansLight.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/QuietSansLight.woff') format('woff');
   
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-700 - latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Quiet Sans';
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-display: swap;
-  src: local(''), url('/fonts/roboto-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/roboto-v29-latin-700.woff') format('woff');
+  src: local(''), url('../fonts/QuietSansRegular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/QuietSansRegular.woff') format('woff');
   
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-900 - latin */
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Quiet Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''), url('../fonts/QuietSansSemiBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/QuietSansSemiBold.woff') format('woff');
+  
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'Quiet Sans';
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: local(''), url('/fonts/roboto-v29-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/fonts/roboto-v29-latin-900.woff') format('woff');
+  src: local(''), url('../fonts/QuietSansBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('../fonts/QuietSansBold.woff') format('woff');
   
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -67,13 +85,15 @@
     --darkPrimary: #13726d;
     --tint: #0e524e;
     --shade: #49b5b0;
+    --btn: #282828;
+    --btnHoverProjects: #f4f5f7;
   }
   body,
   html {
     margin: 0;
     padding: 0;
     overflow-x: hidden !important;
-    font-family: "Roboto", sans-serif;
+    font-family: "Queit Sans", sans-serif;
   }
   a:hover {
     cursor: pointer;
@@ -106,7 +126,7 @@
     margin-bottom: 1.5em;
   }
   .container {
-    padding: 0 0.5em;
+    padding: 0 1.75em;
     margin: auto;
   }
   /* hidden desktop elements */
@@ -118,6 +138,7 @@
   }
   button {
     text-transform: uppercase;
+    font-family: "Quiet Sans", sans-serif;
   }
   .button-solid {
     color: #fff;
@@ -125,12 +146,13 @@
     margin: auto;
     text-align: center;
     text-decoration: none;
-    background: var(--primary);
-    line-height: 2.65;
-    width: 9em;
+    background: var(--btn);
+    line-height: 3.38888889em;
+    width: 11.66666667em;
+    height: 3.38888889em;
     border-radius: 0.16666667em;
     font-size: 0.9em;
-    font-family: "Roboto", sans-serif;
+    font-family: "Quiet Sans", sans-serif;
     -webkit-transition: .2s ease;
     -o-transition: .2s ease;
     transition: .2s ease;
@@ -145,7 +167,7 @@
     display: block;
     height: 100%;
     width: 0%;
-    background: #10625e;
+    background: #1a1a1a;
     opacity: 1;
     top: 0;
     left: 0;
@@ -441,7 +463,7 @@
     transition-delay: .2s;
     opacity: 0;
     visibility: hidden;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quiet Sans', sans-serif;
   }
   #active-menu {
     border-right: 0.2em solid var(--primary);
@@ -451,7 +473,7 @@
 /* Ipad Pro */
 @media screen and (min-width: 450px) and (max-width: 991px) {
   .container {
-    max-width: 45em;
+    max-width: 50em;
   }
   .mobile-nav {
     width: 100% !important;
@@ -492,7 +514,7 @@
     display: block;
   }
   .container {
-    max-width: 55em;
+    max-width: 66.5em;
   }
   /*navbar */
   nav {
@@ -559,7 +581,6 @@
     position: fixed;
     z-index: 1000;
     left: 0;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   #on-top {
     margin-right: 2.5em;
